@@ -1,0 +1,4 @@
+.btn {
+  /* base */
+  @apply px-4 py-3 shadow-5 active:shadow-7 hover:shadow-4 duration-200 font-bold;
+}

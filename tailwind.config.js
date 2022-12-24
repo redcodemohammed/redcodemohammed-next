@@ -2,6 +2,7 @@ const formsPlugin = require('@tailwindcss/forms')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './components/**/*.{js,vue,ts}',
     './layouts/**/*.vue',
@@ -11,7 +12,28 @@ module.exports = {
     './app.vue'
   ],
   theme: {
+    extend: {
+      fontFamily: {
+        karla: ['Karla', 'sans-serif'],
+        'fira-code': ['Fira Code', 'sans-serif'],
+        'ibm-plex-sans-arabic': ['IBM Plex Sans Arabic', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif']
+      },
+      boxShadow: {
+        1: '1px 1px 0px #000000',
+        2: '2px 2px 0px #000000',
+        3: '3px 3px 0px #000000',
+        4: '4px 4px 0px #000000',
+        5: '5px 5px 0px #000000',
+        6: '6px 6px 0px #000000',
+        7: '7px 7px 0px #000000',
+        8: '8px 8px 0px #000000',
+        9: '9px 9px 0px #000000'
+      }
+    },
     colors: {
+      white: '#fff',
+      black: '#000',
       background: {
         DEFAULT: '#282A36',
         50: '#C0C2D0',
