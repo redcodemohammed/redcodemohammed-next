@@ -5,7 +5,8 @@
 </style>
 
 <template>
-  <header class="container mx-auto flex items-center justify-between border-2 px-3 bg-yellow-50">
+  <header
+    class="container mx-auto flex items-center justify-between border-2 px-3 bg-yellow-50 sticky top-1">
     <div class="" id="logo">
       <img src="@/assets/logo.svg" alt="logo" />
     </div>
