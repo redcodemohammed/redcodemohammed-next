@@ -197,14 +197,15 @@ import { Icon } from '@iconify/vue'
         <!-- description -->
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum fuga exercitationem ullam
-          inventore, rem dignissimos voluptatem sapiente, neque, eos et dolor. Eligendi saepe
-          temporibus nam a facilis quibusdam soluta eveniet.
+          inventore....
         </p>
         <button class="bg-orange hover:bg-orange-300 active:bg-orange-600 btn">Read</button>
       </div>
 
       <div class="flex justify-center col-span-full py-5">
-        <button class="bg-orange hover:bg-orange-300 active:bg-orange-600 btn">View More</button>
+        <NuxtLink to="/blog" class="bg-orange hover:bg-orange-300 active:bg-orange-600 btn"
+          >View More</NuxtLink
+        >
       </div>
     </div>
 
