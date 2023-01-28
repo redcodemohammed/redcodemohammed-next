@@ -1,17 +1,14 @@
 <template>
-  <main
-    class="dark"
-    :style="{
-      backgroundImage: `url(${image})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover'
-    }">
+  <main class="dark:bg-background select-none">
     <NuxtLayout>
       <NuxtPage></NuxtPage>
     </NuxtLayout>
   </main>
 </template>
 <script lang="ts" setup>
-// @ts-ignore
-import image from 'assets/image.webp'
+useHead({
+  bodyAttrs: {
+    class: 'dark'
+  }
+})
 </script>

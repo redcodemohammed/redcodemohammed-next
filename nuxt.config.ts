@@ -4,5 +4,11 @@ export default defineNuxtConfig({
   modules: ['@pinia/nuxt', '@vueuse/nuxt', '@nuxtjs/tailwindcss'],
   tailwindcss: {
     configPath: 'tailwind.config.js'
+  },
+  runtimeConfig: {
+    public: {
+      BOT_TOKEN: process.env.BOT_TOKEN,
+      CHAT_ID: process.env.CHAT_ID
+    }
   }
 })
