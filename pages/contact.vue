@@ -24,9 +24,10 @@ async function sendMessage() {
 
     <div class="p-5 flex justify-start">
       <form ref="formRef" @submit.prevent="sendMessage" class="grid gap-3 flex-1 max-w-xl">
-        <input name="name" type="text" placeholder="Your name" class="bg-background text-foreground" />
-        <input name="email" type="text" placeholder="Your email" class="bg-background text-foreground" />
+        <input required name="name" type="text" placeholder="Your name" class="bg-background text-foreground" />
+        <input required name="email" type="email" placeholder="Your email" class="bg-background text-foreground" />
         <textarea
+          required
           name="message"
           cols="30"
           rows="10"
