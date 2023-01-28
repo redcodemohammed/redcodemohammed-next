@@ -1,14 +1,19 @@
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue'
+useHead({
+  title: 'Mohammed Wisam'
+})
 </script>
 <template>
-  <section class="container mx-auto dark font-fira-code">
+  <div class="container mx-auto dark font-fira-code">
     <!-- hero -->
-    <div class="pt-40 md:pb-28 pb-20">
+    <section class="pt-40 md:pb-28 pb-20">
       <!-- top hero text -->
       <div class="flex flex-col gap-5 md:gap-10">
         <div class="">
-          <div class="inline px-3 py-2 bg-background-700 shadow-4 text-comment-400 text-center font-bold">👋 Hi there,</div>
+          <div class="inline px-3 py-2 bg-background-700 shadow-4 text-comment-400 text-center font-bold">
+            👋 Hi there,
+          </div>
         </div>
 
         <div class="text-comment-100 text-7xl">I am Mohammed</div>
@@ -16,10 +21,14 @@ import { Icon } from '@iconify/vue'
 
         <div class="mt-5 flex flex-col md:flex-row gap-4">
           <div class="">
-            <a href="#" class="px-3 py-2 border shadow-4 hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold">Check my Work</a>
+            <a
+              href="#"
+              class="px-3 py-2 border shadow-4 hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold"
+              >Check my Work</a
+            >
           </div>
           <div class="text-lg text-comment-400 font-bold">Or</div>
-          <div class="text-lg text-comment-400 font-bold">Contact Me 👇</div>
+          <div class="text-lg text-comment-400 font-bold">Contact Me On 👇</div>
         </div>
 
         <div class="flex justify-start items-center gap-5 flex-wrap">
@@ -52,16 +61,19 @@ import { Icon } from '@iconify/vue'
           </a>
         </div>
       </div>
-    </div>
+    </section>
 
     <div role="divider" class="h-px w-full bg-white"></div>
 
     <!-- what I do -->
-    <div class="pt-20 md:pb-28 pb-20 grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      <h2 class="text-comment-100 text-4xl lg:text-6xl md:col-span-2 lg:col-span-3 xl:col-span-4 my-10">What I can do</h2>
+    <section class="pt-20 md:pb-28 pb-20 grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <h2 class="text-comment-100 text-4xl lg:text-6xl md:col-span-2 lg:col-span-3 xl:col-span-4 my-10">
+        What I can do
+      </h2>
 
       <!-- front end development -->
-      <div class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
+      <div
+        class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
         <div class="w-full grid place-items-center">
           <Icon icon="mdi:code" class="text-8xl" />
         </div>
@@ -70,17 +82,23 @@ import { Icon } from '@iconify/vue'
 
         <p>
           Using
-          <a href="https://tailwindcss.com/" target="_blank" class="font-bold" style="color: rgb(0, 182, 252)">Tailwind</a>,
-          <a href="https://www.typescriptlang.org" target="_blank" class="font-bold" style="color: rgb(48, 102, 201)">Typescript</a>,
+          <a href="https://tailwindcss.com/" target="_blank" class="font-bold" style="color: rgb(0, 182, 252)"
+            >Tailwind</a
+          >,
+          <a href="https://www.typescriptlang.org" target="_blank" class="font-bold" style="color: rgb(48, 102, 201)"
+            >Typescript</a
+          >,
           <a href="https://vuejs.org/" target="_blank" class="font-bold" style="color: rgb(0, 197, 135)">Vue.js</a>
           and
           <a href="https://nuxt.com/" target="_blank" class="font-bold" style="color: rgb(0, 197, 135)">Nuxt.js</a>
-          on the frontend side, I can build your websites making sure that it's fast, responsive and works on all devices.
+          on the frontend side, I can build your websites making sure that it's fast, responsive and works on all
+          devices.
         </p>
       </div>
 
       <!-- backend development -->
-      <div class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
+      <div
+        class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
         <div class="w-full grid place-items-center">
           <Icon icon="mdi:server" class="text-8xl" />
         </div>
@@ -91,18 +109,26 @@ import { Icon } from '@iconify/vue'
           I use
           <a href="https://nestjs.com/" target="_blank" class="font-bold" style="color: rgb(255, 0, 35)">Nest.js</a>
           or
-          <a href="https://adonisjs.com/" target="_blank" class="font-bold" style="color: rgb(110, 0, 214)">Adonis.js</a>
+          <a href="https://adonisjs.com/" target="_blank" class="font-bold" style="color: rgb(110, 0, 214)"
+            >Adonis.js</a
+          >
           with
-          <a href="https://www.mongodb.com/" target="_blank" class="font-bold" style="color: rgb(29, 155, 82)">Mongodb</a>
+          <a href="https://www.mongodb.com/" target="_blank" class="font-bold" style="color: rgb(29, 155, 82)"
+            >Mongodb</a
+          >
           on the backend, with the help of
-          <a href="https://www.typescriptlang.org" target="_blank" class="font-bold" style="color: rgb(48, 102, 201)">Typescript</a>
+          <a href="https://www.typescriptlang.org" target="_blank" class="font-bold" style="color: rgb(48, 102, 201)"
+            >Typescript</a
+          >
           and
-          <a href="https://nodejs.org/" target="_blank" class="font-bold" style="color: rgb(72, 177, 97)">Node.js</a>, I can build your backend and make sure it's fast, secure, scalable and reliable.
+          <a href="https://nodejs.org/" target="_blank" class="font-bold" style="color: rgb(72, 177, 97)">Node.js</a>, I
+          can build your backend and make sure it's fast, secure, scalable and reliable.
         </p>
       </div>
 
       <!-- mobile development -->
-      <div class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
+      <div
+        class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
         <div class="w-full grid place-items-center">
           <Icon icon="mdi:cellphone-iphone" class="text-8xl" />
         </div>
@@ -111,13 +137,16 @@ import { Icon } from '@iconify/vue'
 
         <p>
           When it comes to mobile app, I prefer using
-          <a href="https://reactnative.dev/" target="_blank" class="font-bold" style="color: rgb(0, 218, 255)">React Native</a>
+          <a href="https://reactnative.dev/" target="_blank" class="font-bold" style="color: rgb(0, 218, 255)"
+            >React Native</a
+          >
           for its simplicity and performance, to ensure that your users will have a great experience.
         </p>
       </div>
 
       <!-- html5 games development -->
-      <div class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
+      <div
+        class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
         <div class="w-full grid place-items-center">
           <Icon icon="mdi:gamepad-variant-outline" class="text-8xl" />
         </div>
@@ -126,18 +155,23 @@ import { Icon } from '@iconify/vue'
 
         <p>
           You have a simple 2D game idea? let me help you bring it to life with
-          <a href="https://phaser.io/" target="_blank" class="font-bold" style="color: rgb(96, 185, 188)">Phaser</a>, making sure it will run smoothly on computers and mobile phones.
+          <a href="https://phaser.io/" target="_blank" class="font-bold" style="color: rgb(96, 185, 188)">Phaser</a>,
+          making sure it will run smoothly on computers and mobile phones.
         </p>
       </div>
-    </div>
+    </section>
 
     <div role="divider" class="h-px w-full bg-white"></div>
 
     <!-- blogs -->
-    <div class="pt-20 md:pb-28 pb-20 grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      <h2 class="text-comment-100 text-4xl lg:text-6xl md:col-span-2 lg:col-span-3 xl:col-span-4 my-10">My Latest Blogs and Posts</h2>
+    <section v-if="false" class="pt-20 md:pb-28 pb-20 grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <h2 class="text-comment-100 text-4xl lg:text-6xl md:col-span-2 lg:col-span-3 xl:col-span-4 my-10">
+        My Latest Blogs and Posts
+      </h2>
 
-      <div v-for="i in 4" class="hover:border-background-300 hover:bg-background-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
+      <div
+        v-for="i in 4"
+        class="hover:border-background-300 hover:bg-background-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
         <!-- image goes here -->
         <div class="w-full h-56 bg-comment-500"></div>
 
@@ -146,24 +180,32 @@ import { Icon } from '@iconify/vue'
 
         <!-- description -->
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum fuga exercitationem ullam inventore....</p>
-        <button class="px-3 py-2 border shadow-xl hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold">Read</button>
+        <button
+          class="px-3 py-2 border shadow-xl hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold">
+          Read
+        </button>
       </div>
 
       <div class="flex justify-center col-span-full py-5">
-        <NuxtLink to="/blog" class="w-full md:max-w-sm text-center px-3 py-2 border shadow-4 hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold"
+        <NuxtLink
+          to="/blog"
+          class="w-full md:max-w-sm text-center px-3 py-2 border shadow-4 hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold"
           >View More</NuxtLink
         >
       </div>
-    </div>
+    </section>
 
     <div role="divider" class="h-px w-full bg-white"></div>
 
     <!-- tech -->
-    <div class="pt-20 md:pb-28 pb-20">
+    <section class="pt-20 md:pb-28 pb-20">
       <h2 class="text-comment-100 text-4xl lg:text-6xl my-10">Technologies I have used</h2>
 
       <div class="flex justify-center items-center gap-5 flex-wrap">
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank" class="text-comment-400">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+          target="_blank"
+          class="text-comment-400">
           <Icon icon="mdi:language-javascript" width="50" />
         </a>
         <a href="https://www.typescriptlang.org/" target="_blank" class="text-comment-400">
@@ -236,11 +278,13 @@ import { Icon } from '@iconify/vue'
           <Icon icon="teenyicons:netlify-solid" width="50" />
         </a>
       </div>
-    </div>
+    </section>
 
     <div role="divider" class="h-px w-full bg-white"></div>
-    <div class="text-comment-100 font-bold py-5 text-center">Made with :love: by Mohammed {{ new Date().getFullYear() }}</div>
-  </section>
+    <section class="text-comment-100 font-bold py-5 text-center">
+      Made with :love: by Mohammed {{ new Date().getFullYear() }}
+    </section>
+  </div>
 </template>
 <script lang="ts" setup></script>
 

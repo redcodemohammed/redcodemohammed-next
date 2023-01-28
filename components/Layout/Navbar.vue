@@ -4,12 +4,9 @@
 }
 </style>
 
-<script lang="ts" setup>
-import { Icon } from '@iconify/vue'
-</script>
-
 <template>
-  <header class="container mx-auto flex items-center justify-between my-5 px-3 bg-background-700 text-comment-400 top-0 z-50 shadow-4">
+  <header
+    class="container mx-auto flex items-center justify-between my-5 px-3 bg-background-700 text-comment-400 top-0 z-50 shadow-4">
     <div class="" id="logo">
       <img src="@/assets/logo.svg" alt="logo" />
     </div>
@@ -31,7 +28,7 @@ import { Icon } from '@iconify/vue'
             <span>Contact Me</span>
           </NuxtLink>
         </li>
-        <li>
+        <li v-if="false">
           <NuxtLink class="py-1" to="/blog">
             <span>My Blog</span>
           </NuxtLink>
