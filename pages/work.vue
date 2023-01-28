@@ -55,6 +55,23 @@ useHead({
           Open
         </a>
       </div>
+      <div
+        class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
+        <!-- image goes here -->
+        <div class="w-full h-56 bg-comment-500 grid place-items-center">
+          <img class="" src="@/assets/forms-api.jpg" alt="" />
+        </div>
+
+        <!-- blog title -->
+        <div class="font-medium text-3xl">Forms API</div>
+
+        <a
+          href="https://forms-ui-88ek.onrender.com/"
+          target="_blank"
+          class="px-3 text-center py-2 border shadow-xl hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold">
+          Open
+        </a>
+      </div>
     </div>
   </section>
 </template>

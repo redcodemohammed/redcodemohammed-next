@@ -21,10 +21,10 @@ useHead({
 
         <div class="mt-5 flex flex-col md:flex-row gap-4">
           <div class="">
-            <a
-              href="#"
+            <NuxtLink
+              to="/work"
               class="px-3 py-2 border shadow-4 hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold"
-              >Check my Work</a
+              >Check my Work</NuxtLink
             >
           </div>
           <div class="text-lg text-comment-400 font-bold">Or</div>
