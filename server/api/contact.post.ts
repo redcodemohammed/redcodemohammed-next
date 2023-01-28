@@ -2,18 +2,17 @@ export default defineEventHandler(async (event) => {
   const body = await readBody<IContactRequest>(event)
 
   const {
-    public: { BOT_TOKEN, CHAT_ID }
+    public: { FORMS_API_KEY, FORM_ID }
   } = useRuntimeConfig()
-  if (BOT_TOKEN) {
-    // build the message
-    const message = `${body.name} \n${body.email} \n
 
-    ------
-    
-     ${body.message}\n`
-
-    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?text=${message}&chat_id=${CHAT_ID}`)
-  }
+  await fetch(`https://f-bh3i.onrender.com/forms/${FORM_ID}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-API-KEY': FORMS_API_KEY
+    },
+    body: JSON.stringify(body)
+  })
 
   return body
 })

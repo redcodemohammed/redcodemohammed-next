@@ -7,8 +7,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      BOT_TOKEN: process.env.BOT_TOKEN,
-      CHAT_ID: process.env.CHAT_ID
+      FORMS_API_KEY: process.env.FORMS_API_KEY,
+      FORM_ID: process.env.FORM_ID
     }
   }
 })
