@@ -6,12 +6,12 @@
 
 <template>
   <header
-    class="container mx-auto flex items-center justify-between my-5 px-3 bg-background-700 text-comment-400 top-0 z-50 shadow-4">
+    class="container mx-auto flex items-center justify-center my-5 px-3 bg-background-700 text-comment-400 top-0 z-50 shadow-4">
     <div class="" id="logo">
       <img src="@/assets/logo.svg" alt="logo" />
     </div>
 
-    <nav class="">
+    <nav class="" v-if="false">
       <ul class="flex items-center justify-center gap-4">
         <li>
           <NuxtLink class="py-1" to="/">
@@ -19,16 +19,6 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink class="py-1" to="/work">
-            <span>My Work</span>
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink class="py-1" to="/contact">
-            <span>Contact Me</span>
-          </NuxtLink>
-        </li>
-        <li v-if="false">
           <NuxtLink class="py-1" to="/blog">
             <span>My Blog</span>
           </NuxtLink>

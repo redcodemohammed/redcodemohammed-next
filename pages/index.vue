@@ -1,62 +1,98 @@
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue'
+import * as THREE from 'three'
+
+onMounted(async () => {
+  window.THREE = THREE
+  // @ts-ignore
+  const { default: GLOBE } = await import('vanta/dist/vanta.globe.min')
+  GLOBE({
+    el: '#vanta',
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: true,
+    minHeight: 200.0,
+    minWidth: 200.0,
+    scale: 1.0,
+    scaleMobile: 1.0,
+    color: 0xff5555,
+    color2: 0x282a36,
+    size: 1.0,
+    backgroundColor: 0x282a36,
+    THREE: window.THREE
+  })
+})
+
 useHead({
   title: 'Mohammed Wisam'
 })
+
+const workSection = ref<HTMLDivElement | null>(null)
+
+const formRef = ref<HTMLFormElement | null>(null)
+async function sendMessage() {
+  if (formRef.value) {
+    const formData = new FormData(formRef.value)
+    await $fetch('/api/contact', { method: 'POST', body: JSON.stringify(Object.fromEntries(formData)) })
+    formRef.value.reset()
+    alert('Thanks for contacting me, I will reply as soon as possible <3')
+  }
+}
 </script>
 <template>
-  <div class="container mx-auto dark font-fira-code">
+  <div class="container mx-auto dark">
     <!-- hero -->
-    <section class="pt-40 md:pb-28 pb-20">
+    <section class="pt-40 md:pb-28 pb-20 relative">
+      <div id="vanta" class="absolute inset-0 w-full h-full"></div>
       <!-- top hero text -->
-      <div class="flex flex-col gap-5 md:gap-10">
+      <div class="flex flex-col gap-5 md:gap-10 z-10 relative text-comment-100">
         <div class="">
           <div class="inline px-3 py-2 bg-background-700 shadow-4 text-comment-400 text-center font-bold">
             👋 Hi there,
           </div>
         </div>
 
-        <div class="text-comment-100 text-7xl">I am Mohammed</div>
-        <div class="text-comment-400 font-bold text-xl">Fullstack web developer</div>
+        <div class="text-7xl">I am Mohammed</div>
+        <div class="font-bold text-xl">Fullstack web developer</div>
 
         <div class="mt-5 flex flex-col md:flex-row gap-4">
           <div class="">
-            <NuxtLink
-              to="/work"
-              class="px-3 py-2 border shadow-4 hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold"
-              >Check my Work</NuxtLink
-            >
+            <button
+              @click="workSection?.scrollIntoView({ behavior: 'smooth' })"
+              class="px-3 py-2 border shadow-4 hover:bg-red-600 duration-150 transform bg-background-700 font-bold">
+              Check my Work
+            </button>
           </div>
-          <div class="text-lg text-comment-400 font-bold">Or</div>
-          <div class="text-lg text-comment-400 font-bold">Contact Me On 👇</div>
+          <div class="text-lg font-bold">Or</div>
+          <div class="text-lg font-bold">Contact Me On 👇</div>
         </div>
 
         <div class="flex justify-start items-center gap-5 flex-wrap">
-          <a href="https://github.com/redcodemohammed" target="_blank" class="text-comment-400">
+          <a href="https://github.com/redcodemohammed" target="_blank" class="">
             <Icon icon="fa-brands:github" width="25" />
           </a>
-          <a href="https://www.instagram.com/s127x/" target="_blank" class="text-comment-400">
+          <a href="https://www.instagram.com/s127x/" target="_blank" class="">
             <Icon icon="fa-brands:instagram" width="25" />
           </a>
-          <a href="https://www.linkedin.com/in/redcodemohammed/" target="_blank" class="text-comment-400">
+          <a href="https://www.linkedin.com/in/redcodemohammed/" target="_blank" class="">
             <Icon icon="fa-brands:linkedin-in" width="25" />
           </a>
-          <a href="https://codepen.io/redcodemohammed" target="_blank" class="text-comment-400">
+          <a href="https://codepen.io/redcodemohammed" target="_blank" class="">
             <Icon icon="fa-brands:codepen" width="25" />
           </a>
-          <a href="https://www.youtube.com/@redcodemohammed" target="_blank" class="text-comment-400">
+          <a href="https://www.youtube.com/@redcodemohammed" target="_blank" class="">
             <Icon icon="fa-brands:youtube" width="25" />
           </a>
-          <a href="https://discordapp.com/users/463723648851902465" target="_blank" class="text-comment-400">
+          <a href="https://discordapp.com/users/463723648851902465" target="_blank" class="">
             <Icon icon="fa-brands:discord" width="25" />
           </a>
-          <a href="https://www.reddit.com/user/CharityHuman3233" target="_blank" class="text-comment-400">
+          <a href="https://www.reddit.com/user/CharityHuman3233" target="_blank" class="">
             <Icon icon="fa-brands:reddit" width="25" />
           </a>
-          <a href="https://www.twitch.tv/redcodemohammed" target="_blank" class="text-comment-400">
+          <a href="https://www.twitch.tv/redcodemohammed" target="_blank" class="">
             <Icon icon="fa-brands:twitch" width="25" />
           </a>
-          <a href="https://redcode9000.t.me" target="_blank" class="text-comment-400">
+          <a href="https://redcode9000.t.me" target="_blank" class="">
             <Icon icon="fa-brands:telegram" width="25" />
           </a>
         </div>
@@ -196,6 +232,77 @@ useHead({
     </section>
 
     <div role="divider" class="h-px w-full bg-white"></div>
+    <!-- my work -->
+    <section ref="workSection" id="#work" class="container mx-auto dark">
+      <div class="p-5">
+        <h2 class="text-comment-100 text-4xl lg:text-6xl my-10">Here is a list of projects I built</h2>
+      </div>
+
+      <!-- frontend -->
+      <div class="p-5 flex flex-col gap-5 md:flex-row md:gap-0 justify-between items-center">
+        <h2 class="text-comment-100 text-xl lg:text-4xl md:col-span-2 lg:col-span-3 xl:col-span-4">Category</h2>
+        <div class="flex gap-5 flex-wrap items-center">
+          <button
+            class="flex items-center gap-2 px-3 py-2 border shadow-xl hover:bg-background-800 duration-150 transform bg-background-900 text-comment-400 font-bold">
+            <span>Frontend</span>
+            <Icon icon="mdi:code" width="20" />
+          </button>
+          <button
+            class="flex items-center gap-2 px-3 py-2 border shadow-xl hover:bg-background-800 duration-150 transform bg-background-900 text-comment-400 font-bold">
+            <span>Backend</span>
+            <Icon icon="mdi:server" width="20" />
+          </button>
+          <button
+            class="flex items-center gap-2 px-3 py-2 border shadow-xl hover:bg-background-800 duration-150 transform bg-background-900 text-comment-400 font-bold">
+            <span>Mobile</span>
+            <Icon icon="mdi:cellphone-iphone" width="20" />
+          </button>
+          <button
+            class="flex items-center gap-2 px-3 py-2 border shadow-xl hover:bg-background-800 duration-150 transform bg-background-900 text-comment-400 font-bold">
+            <span>Games</span>
+            <Icon icon="mdi:gamepad-variant-outline" width="20" />
+          </button>
+        </div>
+      </div>
+      <div class="grid p-5 lg:p-11 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div
+          class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
+          <!-- image goes here -->
+          <div class="w-full h-56 bg-comment-500 grid place-items-center">
+            <img class="" src="@/assets/youtube-downloader.jpg" alt="" />
+          </div>
+
+          <!-- blog title -->
+          <div class="font-medium text-3xl">YouTube Downloader</div>
+
+          <a
+            href="https://yoututbe-downloader.onrender.com/"
+            target="_blank"
+            class="px-3 text-center py-2 border shadow-xl hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold">
+            Open
+          </a>
+        </div>
+        <div
+          class="hover:border-purple-300 hover:bg-purple-900 duration-200 border shadow-6 p-4 border-background-300 font-karla text-comment-400 flex flex-col gap-5">
+          <!-- image goes here -->
+          <div class="w-full h-56 bg-comment-500 grid place-items-center">
+            <img class="" src="@/assets/forms-api.jpg" alt="" />
+          </div>
+
+          <!-- blog title -->
+          <div class="font-medium text-3xl">Forms API</div>
+
+          <a
+            href="https://forms-ui-88ek.onrender.com/"
+            target="_blank"
+            class="px-3 text-center py-2 border shadow-xl hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold">
+            Open
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div role="divider" class="h-px w-full bg-white"></div>
 
     <!-- tech -->
     <section class="pt-20 md:pb-28 pb-20">
@@ -277,6 +384,36 @@ useHead({
         <a href="https://netlify.com/" target="_blank" class="text-comment-400">
           <Icon icon="teenyicons:netlify-solid" width="50" />
         </a>
+      </div>
+    </section>
+
+    <div role="divider" class="h-px w-full bg-white"></div>
+    <!-- contact form -->
+    <section class="container mx-auto dark font-fira-code">
+      <div class="p-5">
+        <h2 class="text-comment-100 text-4xl lg:text-6xl md:col-span-2 lg:col-span-3 xl:col-span-4 my-10">
+          Do you have an interesting idea? let's make it real!
+        </h2>
+      </div>
+
+      <div class="p-5 flex justify-center">
+        <form ref="formRef" @submit.prevent="sendMessage" class="grid gap-3 flex-1 max-w-xl">
+          <input required name="name" type="text" placeholder="Your name" class="bg-background text-foreground" />
+          <input required name="email" type="email" placeholder="Your email" class="bg-background text-foreground" />
+          <textarea
+            required
+            name="message"
+            cols="30"
+            rows="10"
+            placeholder="Your fantastic idea"
+            class="bg-background text-foreground"></textarea>
+          <div class="flex justify-center col-span-full py-5">
+            <button
+              class="w-full px-3 py-2 border shadow-4 hover:bg-background-600 duration-150 transform bg-background-700 text-comment-400 font-bold">
+              Send
+            </button>
+          </div>
+        </form>
       </div>
     </section>
 
